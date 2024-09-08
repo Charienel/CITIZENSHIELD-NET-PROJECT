@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    background-image: url('backgroundd.png'); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    height: 100vh;
+}
+.nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 20px;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.6); 
+    border-radius: 8px; 
+}
+.nav-logo {
+    display: flex; 
+    align-items: center; 
+}
+.nav-logo img {
+    max-height: 50px; 
+    margin-right: 10px; 
+}
+.menu {
+    display: flex;
+    align-items: center; 
+}
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.menu a:hover {
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+.user-profile {
+    display: flex;
+    align-items: center; 
+    background-color: rgba(255, 255, 255, 0.2); 
+    padding: 8px 12px;
+    border-radius: 8px; 
+    margin-left: 20px; 
+}
+.profile-pic {
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-right: 10px; 
+}
+.username {
+    color: white; 
+    font-size: 18px;
+    display: flex;
+    align-items: center; 
+}
+.welcome {
+    color: white;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 8px; 
+    max-width: 450px; 
+    text-align: justify; 
+    position: absolute;
+    right: 0; 
+    top: 210px; 
+    margin: 20px; 
+    margin-right: 10px;
+}
+.welcome p {
+    margin: 0 0 10px 0; 
+}
+.content-box {
+    display: none;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #4f5e45;
+    color: white;
+}
+#about, #concerns {
+    width: 80%;
+    max-width: 600px; 
+    margin: 0 auto; 
+    padding: 20px;
+}
+.concerns-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+}
+.concerns-form label {
+    display: block;
+    font-size: 1.2rem;
+    color: #4f5e45;
+    margin-bottom: 8px;
+}
+.input-group {
+    margin-bottom: 15px;
+}
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+input::placeholder, 
+textarea::placeholder {
+    color: #aaa;
+}
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+}
+.cancel-btn {
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    color: #666;
+    cursor: pointer;
+}
+.submit-btn {
+    background-color: #d49c73;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.submit-btn:hover {
+    background-color: #b57d56;
+}
+#home {
+    display: none; 
+    background: none; 
+    border: none; 
+    margin: 0; 
+    padding: 0; 
+}
+#home.show {
+    display: block; 
+}
+#concerns .form-actions {
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: 20px;
+}
+#concerns .form-actions .cancel-btn,
+#concerns .form-actions .submit-btn {
+    font-size: 14px; 
+    padding: 10px 15px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+}
+#concerns .cancel-btn {
+    background-color: #f0f0f0;
+    color: #333; 
+}
+#concerns .submit-btn {
+    background-color:rgb(93, 107, 85); 
+    color: white; 
+}
+.content-box {
+    display: none; 
+    width: 100%;
+    height: calc(100vh - 60px); 
+    padding: 20px; 
+    box-sizing: border-box;
+}
+.content-box.active {
+    display: block; 
+}

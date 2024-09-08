@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav-logo">
+                <img src="cslogo.png" alt="CitizenShield Logo">
+                <img src="seall.png" alt="Barangay Seal">
+            </div>
+            <div class="menu">
+                <a href="#" class="nav-link" data-target="home">Home</a>
+                <a href="#" class="nav-link" data-target="concerns">Concerns</a>
+                <a href="#" class="nav-link" data-target="announcement">Announcement</a>
+                <a href="#" class="nav-link" data-target="hotlines">Hotlines</a>
+            </div>            
+            <div class="user-profile">
+                <img src="profile.png" alt="User Profile" class="profile-pic">
+                <span class="username">Username</span>
+            </div>
+        </nav>
+        <div class="welcome">
+            <h1>ABOUT US:</h1>
+            <h2>Welcome to Citizenshield!</h2>
+            <p>A groundbreaking initiative dedicated to enhancing community engagement and safety in Barangay Baikingon. Our mission is to bridge the gap between the immediacy of social media and the structured response of local government units, creating a harmonious and responsive communication ecosystem.</p>
+        </div>
+    </header>
+    <main>
+        <div id="home" class="content-box">   
+        </div>
+        <div id="about" class="content-box">
+            <h2>About Us:</h2>
+            <p><br> <span> CitizenShield Net is a new project in Barangay Baikingon aimed at <br> <span> improving community safety through technology and collaboration. <br> <span> It addresses the challenge of monitoring social media for community issues by having a dedicated team to track online posts. <br> <span> </p>
+            
+        </div>
+        <div id="concerns" class="content-box">
+            <h2>Concerns</h2>
+            
+            <form class="concerns-form">
+                <label for="name">Name</label>
+                <div class="input-group">
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+                
+                <label for="comments">Concerns</label>
+                <div class="input-group">
+                    <textarea id="comments" rows="6" placeholder="Add your concerns..."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div id="announcement" class="content-box">
+            <h2>Announcements</h2>
+            <p>Stay updated with the latest announcements and news from Barangay Baikingon.</p>
+        </div>
+
+        <div id="hotlines" class="content-box">
+            <h2>Hotlines</h2>
+            <p>Emergency and essential contact numbers for immediate assistance.</p>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('.nav-link');
+    const contentBoxes = document.querySelectorAll('.content-box');
+
+    function showContentBox(id) {
+        contentBoxes.forEach(box => {
+            if (box.id === id) {
+                box.classList.add('active'); // Show the active content box
+            } else {
+                box.classList.remove('active'); // Hide other content boxes
+            }
+        });
+    }
+
+    function resetToHome() {
+        document.querySelector('.welcome').style.display = 'block';
+        showContentBox('home');
+    }
+
+    resetToHome();
+
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = link.getAttribute('data-target');
+            if (targetId === 'home') {
+                resetToHome();
+            } else {
+                document.querySelector('.welcome').style.display = 'none';
+                showContentBox(targetId);
+            }
+        });
+    });
+});
+    </script>
+</body>
+</html>
